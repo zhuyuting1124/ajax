@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            background-color:beige;
+        }
+    </style>
+    <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btn1").click(function(){
+                var text = $(":text").val();
+                alert(text)
+            })
+            $("#btn2").click(function(){
+                $(":text").val("三国演义");
+            })
+            $("#btn3").click(function(){
+                alert($("div").text());
+            })
+            $("#btn4").click(function(){
+                $("div").text("设置新的内容");
+            })
+            $("#btn5").click(function(){
+                alert($("img").attr("src"));
+            })
+            $("#btn6").click(function(){
+                $("img").attr("src","吃西瓜小女孩.jpg");
+            })
+
+        })
+    </script>
+</head>
+<body>
+<input type="text" id="txt1" value="刘备"/><br/>
+<input type="text" id="txt2" value="关羽" /><br/>
+<input type="text" id="txt3" value="张飞"/><br/>
+<br/>
+<div>我是第一个div</div>
+<div>我是第二个div</div>
+<div>我是第三个div</div>
+<br/>
+<img src="F:\2工作\java\vscode\badgirl.png" id="image1"/>
+<br/>
+
+<input type="checkbox" value="游泳"/>游泳<br/>
+<input type="checkbox" value="健身" checked/>健身<br/>
+<input type="checkbox" value="电子游戏" checked/>电子游戏<br/>
+<br/>
+
+
+<input type="button" value="设置text的value是hello" id="btn1"/>
+<br/>
+<input type="button" value="设置text的value" id="btn2"/>
+<br/>
+<input type="button" value="text属性" id="btn3"/>
+<br/>
+<input type="button" value="设置text" id="btn4"/>
+<br/>
+<input type="button" value="显示指定的attr值" id="btn5"/>
+<br/>
+<input type="button" value="设置指定的attr值" id="btn6"/>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bj.dao.StudentDao">
+    <!--
+    sql语句必须写在对应的标签中
+    <insert>增
+    <delete>删
+    <update>改
+    <select>查
+    parameterType:为sql语句传递的参数的类型
+    resultType:返回值类型
+    -->
+    <select id="getById" parameterType="java.lang.String" resultType="com.bj.domain.Student">
+        select * from student where id = #{id}
+    </select>
+    <select id="getAll" resultType="com.bj.domain.Student">
+        select * from student
+    </select>
+    <select id="insertStu">
+        insert into student values(#{id},#{name},#{age})
+    </select>
+    <select id="updateStu">
+        update student set name=#{name}, age=#{age} where id = #{id}
+    </select>
+    <select id="deleteStu">
+        delete from student where id=#{id}
+    </select>
+</mapper>

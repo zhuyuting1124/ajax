@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+
+    <!--
+    //package 批量注册
+    //方式1
+    <typeAlias type="com.bj.domain.Student" alias="stu"/>
+    //type:为哪个domain起别名，填写包.类名称
+    //alias:别名的名字
+    //方式2
+    <package name="com.bj.domain"/>
+    //name:指定的一个包结构，表示在该包下，所有domain自动起好了别名
+    -->
+
+
+    <!--
+    <mappers>
+        <mapper class="com.bj.dao.StudentDao"/>
+        //使用class属性找到dao层接口全路径
+    <mappers/>
+    -->
+
+    <!--连接数据库环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/bj/dao/StudentDao.xml"/>
+    </mappers>
+</configuration>
